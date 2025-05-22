@@ -370,23 +370,6 @@
         .project-card .carousel-control-next:hover {
             opacity: 1;
         }
-        .typing-container {
-        display: inline-block;
-        margin: 0 auto;
-        }
-
-        .typing-text {
-            color: var(--accent-color);
-            font-style: italic;
-            position: relative;
-            font-size: 1.5rem;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid var(--accent-color);
-            width: 0;
-            animation: typing 3.5s steps(30) 1s forwards, blink 0.75s step-end infinite;
-        }
-
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
@@ -406,11 +389,8 @@
             font-style: italic;
             position: relative;
             font-size: 1.5rem;
-            overflow: hidden;
-            white-space: nowrap;
             border-right: 3px solid var(--accent-color);
-            width: 0;
-            animation: typing 3.5s steps(30) 1s forwards, blink 0.75s step-end infinite;
+            animation: blink 0.75s step-end infinite;
         }
 
         @keyframes typing {
@@ -486,24 +466,24 @@
             <div class="row align-items-center">
                 <div class="col-12">
                     <h3 class="mb-4">Desarrollador Full Stack con pasión por crear experiencias digitales excepcionales</h3>
-                    <p class="lead">Programador full stack con dos años de experiencia. Enfocado principalmente en el desarrollo de aplicaciones web escalables. Egresado de la carrera de desarrollo de software.</p>
-                    <p>Mi enfoque combina habilidades técnicas sólidas con una comprensión profunda de las necesidades del usuario y los objetivos del negocio. Disfruto resolviendo problemas complejos y transformando ideas en productos digitales funcionales y atractivos.</p>
+                    <p class="lead">Desarrollador Full Stack con <span id="yearsExperience"></span> años de experiencia, especializado en el desarrollo de aplicaciones web modernas y soluciones tecnológicas innovadoras. Mi formación académica en desarrollo de software, combinada con experiencia práctica en proyectos reales, me permite abordar desafíos técnicos complejos con una perspectiva integral.</p>
+                    <p>Me destaco por mi capacidad para liderar proyectos desde su concepción hasta su implementación, con un fuerte énfasis en la arquitectura de software y las mejores prácticas de desarrollo. Mi experiencia incluye el desarrollo de sistemas de gestión académica y administrativa, donde he demostrado habilidades tanto en el frontend como en el backend.</p>
                     <br>
                     <div class="row mt-4">
                         <div class="col-md-6">
-                            <h4 class="h5">Educación</h4>
+                            <h4 class="h5">Educación </h4>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="fas fa-graduation-cap me-2"></i> Tecnicatura en desarrollo de software [2022-2025]</li>
                                 
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <h4 class="h5">Idiomas y Habilidades</h4>
+                            <h4 class="h5">Habilidades Destacadas</h4>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="fas fa-language me-2"></i> Inglés (Intermedio - Avanzado)</li>
-                                <li class="mb-2"><i class="fas fa-users me-2"></i> Trabajo en equipo</li>
-                                <li class="mb-2"><i class="fas fa-comments me-2"></i> Comunicación efectiva</li>
-                                <li><i class="fas fa-sync-alt me-2"></i> Adaptabilidad y aprendizaje rápido</li>
+                                <li class="mb-2"><i class="fas fa-project-diagram me-2"></i> Gestión de Proyectos</li>
+                                <li class="mb-2"><i class="fas fa-users me-2"></i> Liderazgo y Trabajo en Equipo</li>
+                                <li class="mb-2"><i class="fas fa-comments me-2"></i> Comunicación Efectiva</li>
                             </ul>
                         </div>
                     </div>
@@ -573,7 +553,7 @@
                             <p class="card-text">Desarrollé sistemas especializados para profesionales de la salud, incluyendo un odontograma digital y un sistema de audiometría.</p>
                             <p class="card-text">Diseñé e implementé interfaces intuitivas para la visualización de datos médicos complejos, facilitando el diagnóstico y seguimiento de pacientes.</p>
                             <p class="card-text">Implementé funcionalidades para el registro detallado de procedimientos dentales y pruebas auditivas, generación de informes y seguimiento de historiales clínicos.</p>
-                            <p><strong>Tecnologías utilizadas:</strong> PHP, JavaScript, Bootstrap, SQL, Chart.js.</p>
+                            <p><strong>Tecnologías utilizadas:</strong> HTML, JavaScript, Bootstrap, Chart.js.</p>
                         </div>
                     </div>
                 </div>
@@ -645,7 +625,7 @@
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a>
+                                <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
                                 <a href="vida-detalles.html" class="btn btn-primary btn-sm"><i class="fas fa-info-circle me-1"></i> Detalles</a>
                             </div>
                         </div>
@@ -739,7 +719,7 @@
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a>
+                                <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
                                 <a href="spp-detalles.html" class="btn btn-primary btn-sm"><i class="fas fa-info-circle me-1"></i> Detalles</a>
                             </div>
                         </div>
@@ -774,11 +754,11 @@
                         <div class="card-body">
                             <h5 class="card-title">Odontograma Digital</h5>
                             <p class="card-text">Aplicación web para odontólogos que permite registrar y visualizar el estado dental de los pacientes de forma interactiva y detallada.</p>
-                            <p><strong>Tecnologías:</strong> JavaScript, HTML5 Canvas, PHP, MySQL</p>
+                            <p><strong>Tecnologías:</strong> JavaScript, HTML5 Canvas</p>
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a>
+                                <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
                                 <a href="img/odontograma/index.html" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
                             </div>
                         </div>
@@ -813,11 +793,11 @@
                         <div class="card-body">
                             <h5 class="card-title">Sistema de Audiometría</h5>
                             <p class="card-text">Aplicación web para la gestión y registro de audiometrías, permitiendo la creación y visualización de audiogramas de manera interactiva.</p>
-                            <p><strong>Tecnologías:</strong> PHP, JavaScript, Bootstrap, SVG</p>
+                            <p><strong>Tecnologías:</strong> JavaScript, Bootstrap, SVG, Chart.js</p>
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
-                                <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a>
+                                <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
                                 <a href="img/audiograma/index.html" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
                             </div>
                         </div>
@@ -929,26 +909,14 @@
     <footer class="">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2024 Maximiliano André Olmos Bazán. Todos los derechos reservados.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="social-links">
-                        <a href="https://linkedin.com/in/maxiolmosbazan/" target="_blank" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/maintres" target="_blank" class="text-light me-3"><i class="fab fa-github"></i></a>
-                        <a href="mailto:maxiolmos1993@gmail.com" class="text-light"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
+                <div class="col-md-12 text-center ">
+                    <p class="mb-0">&copy; 2025 Maximiliano Olmos</p>
+                </div>                
             </div>
         </div>
     </footer>
     
-    <!-- Botón flotante para CV -->
-    <div class="cv-button">
-        <a href="https://docs.google.com/document/d/1pvKFoOaEs-O5Ry_RbkmQ2uZZEoowyqQRXTZqMSINrMY/edit?usp=sharing" target="_blank" class="btn btn-primary rounded-circle" title="Ver mi CV">
-            <i class="fas fa-file-alt"></i>
-        </a>
-    </div>
+    
     
     <!-- Botón de cambio de tema -->
     <div class="theme-toggle" id="themeToggle">
@@ -959,36 +927,41 @@
     
     <!-- Script personalizado -->
     <script>
-        // Efecto de escritura para la frase personal
+        const texts = [
+            "Transformando código en soluciones",
+            "Desarrollando experiencias digitales",
+            "Creando aplicaciones innovadoras"
+        ];
+
+        let currentIndex = 0;
+        const typingText = document.querySelector('.typing-text');
+
+        function typeText(text, index = 0) {
+            if (index < text.length) {
+                typingText.textContent = text.substring(0, index + 1);
+                setTimeout(() => typeText(text, index + 1), 100);
+            } else {
+                setTimeout(() => {
+                    eraseText(text);
+                }, 2000);
+            }
+        }
+
+        function eraseText(text, index = text.length) {
+            if (index > 0) {
+                typingText.textContent = text.substring(0, index - 1);
+                setTimeout(() => eraseText(text, index - 1), 50);
+            } else {
+                currentIndex = (currentIndex + 1) % texts.length;
+                setTimeout(() => typeText(texts[currentIndex]), 500);
+            }
+        }
+
+        // Iniciar la animación
         document.addEventListener('DOMContentLoaded', function() {
-            const typingText = document.querySelector('.typing-text');
             if (typingText) {
-                typingText.textContent = "Transformando código en soluciones";
+                typeText(texts[currentIndex]);
             }
-            
-            const phrase = "Transformando código en soluciones";
-            let i = 0;
-            
-            function typeWriter() {
-                if (i < phrase.length) {
-                    typingText.innerHTML += phrase.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100); // Velocidade de escritura
-                } else {
-                    // Añadir cursor parpadeante al final
-                    typingText.innerHTML += '<span class="cursor">|</span>';
-                    
-                    // Opcional: Reiniciar después de un tiempo
-                    setTimeout(() => { 
-                        typingText.innerHTML = ''; 
-                        i = 0; 
-                        typeWriter(); 
-                    }, 4000);
-                }
-            }
-            
-            // Iniciar el efecto de escritura
-            setTimeout(typeWriter, 1000); // Esperar 1 segundo antes de comenzar
         });
         
         // Activar los tooltips de Bootstrap
@@ -1019,6 +992,15 @@
             });
         });
         
+        // Calcular años de experiencia
+        function updateExperienceYears() {
+            const startDate = new Date('2023-03-01');
+            const currentDate = new Date();
+            const years = Math.floor((currentDate - startDate) / (365.25 * 24 * 60 * 60 * 1000));
+            document.getElementById('yearsExperience').textContent = years;
+        }
+        updateExperienceYears();
+
         // Cambio de tema claro/oscuro
         const themeToggle = document.querySelector('.theme-toggle');
         if (themeToggle) {
