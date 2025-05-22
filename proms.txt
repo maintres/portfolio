@@ -1,0 +1,19 @@
+puedes agregar las imagenes que hay en la carpeta spp de img del 1 al 14 
+haz como algo para que vayan pasando las imagenes. agregalo en el apartado de 
+Sistema de Registro Penitenciario al lado del carruse que hiciste de sistema de 
+gestion academica
+
+no lo pongas en el apartado de pasantia,
+
+---------------------------------------
+en la parte de "demo" de el apartado de sistema de registro penitenciario, 
+podrias sacar el boton de demo y poner uno que diga detalle, donde el 
+boton detalle te envie a otra pagina donde apareza la informacion de Análisis 
+Detallado del Proyecto SPP de la carpeta spp y las imagenes de la carpeta spp 
+mescalndola bien para que se vea presentable.
+------------------------------------------
+puedes agregar las imagenes que hay en la carpeta odontograma 1.png y 2 png 
+haz como algo para que vayan pasando las imagenes. agregalo en el apartado 
+de Mis proyectos en donde dice odontograma al lado del carruse que hiciste 
+de sistema de registro penitenciario y en el boton de demo del odontograma 
+digital pon el archivo index.php de la carpeta odontograma.

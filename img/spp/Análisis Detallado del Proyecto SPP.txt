@@ -1,0 +1,61 @@
+## Estructura General del Proyecto
+El proyecto SPP es una aplicación web PHP que gestiona información de personas privadas de libertad (PPL). La estructura del proyecto está organizada de la siguiente manera:
+
+### Directorios Principales
+- Base de datos : Contiene archivos SQL para la estructura de datos
+- Views : Contiene las vistas de la aplicación, principalmente en el subdirectorio admin
+- conn : Maneja la conexión a la base de datos
+- css : Archivos de estilos
+- herramientas : Documentación y utilidades
+- img : Recursos gráficos
+- img_ppl : Almacena imágenes de los PPL
+- js : Scripts JavaScript
+## Módulos Principales
+### 1. Gestión de Usuarios y Autenticación
+- Sistema de roles (administrador y otros roles)
+- Gestión de sesiones
+- Configuración de usuarios
+### 2. Gestión de PPL
+- Registro y edición de datos personales
+- Gestión de prontuarios
+- Sistema de marcas corporales
+- Registro fotográfico y huellas dactilares
+### 3. Informes y Evaluaciones
+- Informes psiquiátricos y psicológicos
+- Evaluaciones laborales y espirituales
+- Informes sanitarios
+- Observaciones y seguimiento
+### 4. Gestión Familiar y Social
+- Registro de información familiar
+- Seguimiento de visitas
+- Situación socioeconómica
+- Vínculos familiares
+### 5. Situación Legal
+- Control de situación legal
+- Registro de causas y delitos
+- Seguimiento de condenas
+- Gestión de defensores
+## Características Técnicas
+### Frontend
+- Utiliza Bootstrap para el diseño responsivo
+- jQuery para manipulación del DOM
+- Implementación de modales y formularios dinámicos
+- Sistema de alertas y notificaciones
+### Backend
+- PHP con arquitectura MVC básica
+- Sistema de conexión a base de datos MySQL/MariaDB
+- Manejo de sesiones y autenticación
+- Sistema de auditoría para cambios
+### Seguridad
+- Validación de entradas
+- Protección contra SQL Injection
+- Control de acceso basado en roles
+- Registro de auditoría de acciones
+## Áreas de Mejora Potencial
+1. Implementación de un sistema de caché
+2. Mejora en la validación de formularios del lado del cliente
+3. Optimización de consultas a la base de datos
+4. Implementación de un sistema de respaldo automático
+5. Mejora en la documentación del código
+## Conclusión
+El proyecto SPP es una aplicación robusta para la gestión de PPL con un enfoque integral que abarca aspectos legales, sociales, médicos y administrativos. La estructura modular permite una fácil expansión y mantenimiento del sistema.

@@ -1,0 +1,75 @@
+Informe del Sistema Gestion Instituto
+
+## Descripción General
+El sistema Vida Silvestre Maxi es una plataforma de gestión educativa desarrollada para el Instituto Superior Vida Silvestre. Está diseñado para administrar alumnos, profesores, materias, ciclos lectivos, notas y exámenes.
+
+## Arquitectura Técnica
+- Frontend : HTML, CSS, Bootstrap, JavaScript
+- Backend : PHP
+- Base de Datos : MySQL
+- Estructura de archivos : Organización MVC (Modelo-Vista-Controlador)
+## Módulos Principales
+### 1. Gestión de Usuarios
+- Roles : Administrador, Profesor, Alumno
+- Funcionalidades :
+  - Registro y edición de usuarios
+  - Configuración de perfil
+  - Cambio de contraseña
+  - Gestión de estados (Activo/Inactivo)
+### 2. Gestión Académica
+- Materias :
+  - Creación y edición
+  - Asignación de correlativas
+  - Configuración de horas, resolución y tipo
+- Ciclos Lectivos :
+  - Creación y actualización
+  - Definición de ciclo actual
+  - Configuración de fechas
+### 3. Gestión de Notas y Evaluaciones
+- Notas :
+  - Registro de múltiples notas por materia (n1-n13)
+  - Actualización masiva
+- Exámenes :
+  - Creación de mesas de examen
+  - Asignación de tribunales
+  - Registro de actas
+### 4. Inscripciones
+- Inscripción a materias con validación de correlativas
+- Inscripción a exámenes finales
+- Gestión de estados de inscripción
+## Base de Datos
+El sistema utiliza una base de datos MySQL con las siguientes tablas principales:
+
+- persona (usuarios)
+- materia
+- ciclo_lectivo
+- nota
+- mesa_examen
+- acta
+- inscripcion
+- correlativa
+## Estado Actual
+Según la documentación encontrada en `doc.txt` , el sistema tiene las siguientes áreas pendientes de implementación:
+
+1. Manejo completo de múltiples correlativas por materia
+2. Mejora en mensajes de error durante inscripciones
+3. Validación de estado de materia antes de inscripción
+4. Optimización de consultas a la base de datos
+5. Compatibilidad con ciclos lectivos anteriores/futuros
+6. Funciones adicionales de administración de inscripciones
+## Características Destacables
+- Uso de transacciones en operaciones críticas
+- Interfaz responsive con Bootstrap
+- Validación en cliente y servidor
+- Sistema de notificaciones
+- Generación de reportes
+## Tecnologías Utilizadas
+- Frontend : Bootstrap 5, Font Awesome, jQuery
+- Backend : PHP con PDO para conexión a base de datos
+- Herramientas : XAMPP como entorno de desarrollo
+## Recomendaciones
+1. Implementar las funcionalidades pendientes documentadas
+2. Considerar migrar a un framework PHP como Laravel o Symfony para mejor estructura
+3. Implementar pruebas unitarias
+4. Mejorar la documentación técnica del sistema
+5. Considerar implementación de API REST para futuras integraciones

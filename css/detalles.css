@@ -1,0 +1,59 @@
+:root {
+    --primary-color: #4682B4;
+    --secondary-color: #0a2351;
+    --accent-color: #5DA9E9;
+    --dark-bg: #0a1929;
+    --dark-card: #0f2942;
+    --light-text: #e9ecef;
+    --dark-text: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.feature-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-list li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.tech-badge {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin: 0.5rem;
+    display: inline-block;
+}
+
+.navbar {
+    background-color: var(--secondary-color);
+}
