@@ -1,0 +1,397 @@
+.google-form-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.google-form-container iframe {
+    border: none;
+    transition: all 0.3s;
+}
+
+/* Ajuste para modo oscuro/claro */
+html[data-bs-theme="light"] .google-form-container {
+    background-color: #fff;
+}
+
+html[data-bs-theme="dark"] .google-form-container {
+    background-color: var(--dark-card);
+}
+    .cv-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.cv-button .btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.cv-button .btn:hover {
+    transform: scale(1.1);
+}
+
+:root {
+    --primary-color: #4682B4; /* Azul acero (de la tarjeta) */
+    --secondary-color: #222; /* Azul marino oscuro (fondo de la tarjeta) */
+    --accent-color: #5DA9E9; /* Azul claro (para acentos) */
+    --dark-bg: #12161c; /* Fondo oscuro azulado - Este es el color que te gusta */
+    --dark-card: #222; /* Fondo de tarjetas */
+    --light-text: #e9ecef;
+    --dark-text: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--dark-bg); /* Ya está usando el color #0a1929 */
+    color: var(--light-text);
+}
+
+.navbar {
+    transition: all 0.4s;
+    background-color: #222; /* Azul marino semi-transparente */
+}
+
+.navbar-scrolled {
+    background-color: var(--secondary-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero {
+    min-height: 100vh;
+    padding-top: 80px; /* Añadir padding superior para compensar la navbar */
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    color: var(--light-text);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin: 1rem;
+    color: var(--accent-color);
+    transition: all 0.3s;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.project-card {
+    transition: transform 0.3s;
+    margin-bottom: 2rem;
+    height: 100%;
+    background-color: var(--dark-card);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.card {
+    background-color: var(--dark-card);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    color: var(--light-text);
+}
+
+.card-footer {
+    background-color: var(--dark-card) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin: 1rem;
+    color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.tech-icon:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.contact-info i {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-light {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.bg-light {
+    background-color: var(--dark-bg) !important; /* Aseguramos que use #0a1929 */
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Animaciones */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* Estilos para formularios */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light-text);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    color: var(--light-text);
+    box-shadow: 0 0 0 0.25rem rgba(70, 130, 180, 0.25);
+}
+
+.form-label {
+    color: var(--light-text);
+}
+
+/* Botón de cambio de tema */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Estilos para modo claro */
+html[data-bs-theme="light"] body {
+    background-color: #f8f9fa;
+    color: var(--dark-text);
+}
+
+html[data-bs-theme="light"] .navbar {
+    background-color: rgba(10, 35, 81, 0.9);
+}
+
+html[data-bs-theme="light"] .navbar-scrolled {
+    background-color: var(--secondary-color);
+}
+
+html[data-bs-theme="light"] .section-title {
+    color: var(--dark-text);
+}
+
+html[data-bs-theme="light"] .card,
+html[data-bs-theme="light"] .project-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+html[data-bs-theme="light"] .card-body {
+    color: var(--dark-text);
+}
+
+html[data-bs-theme="light"] .card-footer {
+    background-color: white !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html[data-bs-theme="light"] .bg-light {
+    background-color: #f8f9fa !important;
+}
+
+html[data-bs-theme="light"] .form-control {
+    background-color: white;
+    border: 1px solid #ced4da;
+    color: var(--dark-text);
+}
+
+html[data-bs-theme="light"] .form-control:focus {
+    background-color: white;
+    color: var(--dark-text);
+}
+
+html[data-bs-theme="light"] .form-label {
+    color: var(--dark-text);
+}
+.btn-outline-light {
+    color: var(--light-text);
+    border-color: var(--light-text);
+    background-color: transparent;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+html[data-bs-theme="light"] .btn-outline-light {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+html[data-bs-theme="light"] .btn-outline-light:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+.typing-text {
+    color: var(--accent-color);
+    font-style: italic;
+    min-height: 1.5em;
+    position: relative;
+}
+
+.cursor {
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.project-card .carousel-item img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card .carousel-indicators {
+    margin-bottom: 0;
+}
+
+.project-card .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.project-card .carousel-indicators button.active {
+    background-color: var(--accent-color);
+}
+
+.project-card .carousel-control-prev,
+.project-card .carousel-control-next {
+    width: 15%;
+    opacity: 0.7;
+}
+
+.project-card .carousel-control-prev:hover,
+.project-card .carousel-control-next:hover {
+    opacity: 1;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color) }
+}
+.typing-container {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.typing-text {
+    color: var(--accent-color);
+    font-style: italic;
+    position: relative;
+    font-size: 1.5rem;
+    border-right: 3px solid var(--accent-color);
+    animation: blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color) }
+}

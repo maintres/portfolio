@@ -1,0 +1,40 @@
+## Documentación de partes_cuerpo.html
+Este archivo HTML implementa una interfaz interactiva para que los usuarios seleccionen partes del cuerpo humano. Utiliza un gráfico SVG para visualizar el cuerpo y Vue.js para gestionar la interactividad y el estado de la aplicación.
+
+### Estructura del Archivo
+El archivo se compone de las siguientes secciones principales:
+
+1. 1.
+   Estilos CSS: Define la apariencia de los elementos de la interfaz, incluyendo el cuerpo humano SVG, las partes seleccionadas y los botones.
+2. 2.
+   Estructura HTML:
+   - Un contenedor principal con el id app que envuelve toda la aplicación Vue.js.
+   - Una sección para mostrar el cuerpo humano SVG, dividido en "Vista Frontal" y "Vista Posterior".
+   - Una sección para mostrar la lista de partes del cuerpo que el usuario ha seleccionado.
+   - Un campo de formulario oculto ( <input type="hidden"> ) que almacena las partes seleccionadas como una cadena de texto separada por comas, listo para ser enviado con un formulario.
+3. 3.
+   Lógica de JavaScript (Vue.js):
+   - Importa la librería de Vue.js desde un CDN.
+   - Crea una instancia de Vue que controla la aplicación.
+   - Datos ( data ):
+     - selectedParts : Un array que almacena los nombres de las partes del cuerpo seleccionadas.
+     - selectedElements : Un array que almacena las referencias a los elementos <path> del SVG que han sido seleccionados.
+   - Métodos ( methods ):
+     - part_clicked(event) : Se ejecuta cuando el usuario hace clic en una parte del cuerpo en el SVG. Añade o elimina la parte seleccionada de los arrays selectedParts y selectedElements , y actualiza la clase CSS del elemento para resaltarlo.
+     - removePart(index) : Elimina una parte de la lista de partes seleccionadas.
+     - clearAll() : Limpia todas las selecciones, vaciando los arrays y eliminando los estilos de resaltado.
+### Funcionamiento
+1. 1.
+   El usuario ve una representación del cuerpo humano.
+2. 2.
+   Al hacer clic en una parte del cuerpo (un elemento <path> dentro del SVG), se invoca el método part_clicked .
+3. 3.
+   Este método añade el nombre de la parte a la lista de "Partes Seleccionadas" y resalta la parte en el SVG.
+4. 4.
+   Si el usuario vuelve a hacer clic en una parte ya seleccionada, se elimina de la lista y se le quita el resaltado.
+5. 5.
+   El usuario puede ver una lista de todas las partes que ha seleccionado.
+6. 6.
+   Hay botones para eliminar partes individualmente o para limpiar toda la selección.
+7. 7.
+   La información de las partes seleccionadas se almacena en un campo de formulario oculto, lo que permite que estos datos se envíen fácilmente como parte de un formulario más grande.

@@ -7,402 +7,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- CSS personalizado -->
-    <style>
-        .google-form-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            border-radius: 8px;
-        }
-        
-        .google-form-container iframe {
-            border: none;
-            transition: all 0.3s;
-        }
-        
-        /* Ajuste para modo oscuro/claro */
-        html[data-bs-theme="light"] .google-form-container {
-            background-color: #fff;
-        }
-        
-        html[data-bs-theme="dark"] .google-form-container {
-            background-color: var(--dark-card);
-        }
-            .cv-button {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .cv-button .btn {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-        }
-        
-        .cv-button .btn:hover {
-            transform: scale(1.1);
-        }
-        
-        :root {
-            --primary-color: #4682B4; /* Azul acero (de la tarjeta) */
-            --secondary-color: #0a2351; /* Azul marino oscuro (fondo de la tarjeta) */
-            --accent-color: #5DA9E9; /* Azul claro (para acentos) */
-            --dark-bg: #0a1929; /* Fondo oscuro azulado - Este es el color que te gusta */
-            --dark-card: #0f2942; /* Fondo de tarjetas */
-            --light-text: #e9ecef;
-            --dark-text: #212529;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-            background-color: var(--dark-bg); /* Ya está usando el color #0a1929 */
-            color: var(--light-text);
-        }
-        
-        .navbar {
-            transition: all 0.4s;
-            background-color: rgba(10, 35, 81, 0.9); /* Azul marino semi-transparente */
-        }
-        
-        .navbar-scrolled {
-            background-color: var(--secondary-color);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .hero {
-            min-height: 100vh;
-            padding-top: 80px; /* Añadir padding superior para compensar la navbar */
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: white;
-            display: flex;
-            align-items: center;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-bottom: 1rem;
-            color: var(--light-text);
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        .tech-icon {
-            font-size: 3rem;
-            margin: 1rem;
-            color: var(--accent-color);
-            transition: all 0.3s;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: 0 auto;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .project-card {
-            transition: transform 0.3s;
-            margin-bottom: 2rem;
-            height: 100%;
-            background-color: var(--dark-card);
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border-bottom: 3px solid var(--accent-color);
-        }
-        
-        .card {
-            background-color: var(--dark-card);
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card-body {
-            color: var(--light-text);
-        }
-        
-        .card-footer {
-            background-color: var(--dark-card) !important;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .tech-icon {
-            font-size: 3rem;
-            margin: 1rem;
-            color: var(--primary-color);
-            transition: all 0.3s;
-        }
-        
-        .tech-icon:hover {
-            color: var(--accent-color);
-            transform: scale(1.2);
-        }
-        
-        .contact-info i {
-            color: var(--accent-color);
-            margin-right: 10px;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .btn-light {
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-        
-        .text-accent {
-            color: var(--accent-color) !important;
-        }
-        
-        .bg-light {
-            background-color: var(--dark-bg) !important; /* Aseguramos que use #0a1929 */
-        }
-        
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-        
-        /* Animaciones */
-        .fade-in {
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-        }
-        
-        /* Estilos para formularios */
-        .form-control {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--light-text);
-        }
-        
-        .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-color: var(--primary-color);
-            color: var(--light-text);
-            box-shadow: 0 0 0 0.25rem rgba(70, 130, 180, 0.25);
-        }
-        
-        .form-label {
-            color: var(--light-text);
-        }
-        
-        /* Botón de cambio de tema */
-        .theme-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--secondary-color);
-            color: var(--light-text);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-        }
-        
-        .theme-toggle:hover {
-            background-color: var(--primary-color);
-            transform: scale(1.1);
-        }
-        
-        /* Estilos para modo claro */
-        html[data-bs-theme="light"] body {
-            background-color: #f8f9fa;
-            color: var(--dark-text);
-        }
-        
-        html[data-bs-theme="light"] .navbar {
-            background-color: rgba(10, 35, 81, 0.9);
-        }
-        
-        html[data-bs-theme="light"] .navbar-scrolled {
-            background-color: var(--secondary-color);
-        }
-        
-        html[data-bs-theme="light"] .section-title {
-            color: var(--dark-text);
-        }
-        
-        html[data-bs-theme="light"] .card,
-        html[data-bs-theme="light"] .project-card {
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        html[data-bs-theme="light"] .card-body {
-            color: var(--dark-text);
-        }
-        
-        html[data-bs-theme="light"] .card-footer {
-            background-color: white !important;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        html[data-bs-theme="light"] .bg-light {
-            background-color: #f8f9fa !important;
-        }
-        
-        html[data-bs-theme="light"] .form-control {
-            background-color: white;
-            border: 1px solid #ced4da;
-            color: var(--dark-text);
-        }
-        
-        html[data-bs-theme="light"] .form-control:focus {
-            background-color: white;
-            color: var(--dark-text);
-        }
-        
-        html[data-bs-theme="light"] .form-label {
-            color: var(--dark-text);
-        }
-        .btn-outline-light {
-            color: var(--light-text);
-            border-color: var(--light-text);
-            background-color: transparent;
-        }
-        
-        .btn-outline-light:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        html[data-bs-theme="light"] .btn-outline-light {
-            color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-        
-        html[data-bs-theme="light"] .btn-outline-light:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: white;
-        }
-        .typing-text {
-            color: var(--accent-color);
-            font-style: italic;
-            min-height: 1.5em;
-            position: relative;
-        }
-
-        .cursor {
-            animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        .project-card .carousel-item img {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .project-card .carousel-indicators {
-            margin-bottom: 0;
-        }
-        
-        .project-card .carousel-indicators button {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .project-card .carousel-indicators button.active {
-            background-color: var(--accent-color);
-        }
-        
-        .project-card .carousel-control-prev,
-        .project-card .carousel-control-next {
-            width: 15%;
-            opacity: 0.7;
-        }
-        
-        .project-card .carousel-control-prev:hover,
-        .project-card .carousel-control-next:hover {
-            opacity: 1;
-        }
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent }
-            50% { border-color: var(--accent-color) }
-        }
-        .typing-container {
-            display: inline-block;
-            margin: 0 auto;
-        }
-
-        .typing-text {
-            color: var(--accent-color);
-            font-style: italic;
-            position: relative;
-            font-size: 1.5rem;
-            border-right: 3px solid var(--accent-color);
-            animation: blink 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent }
-            50% { border-color: var(--accent-color) }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
     <!-- Navbar -->
@@ -445,15 +53,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-3 fw-bold mb-4">Hola, soy <span class="text-accent">Maximiliano André Olmos Bazán</span></h1>
-                    <h2 class="h3 mb-3">Desarrollador Full Stack</h2>
+                    <h1 class="display-3 fw-bold mb-4">Hola, soy <span class="text-accent">Maximiliano Olmos</span></h1>
+                    <h2 class="h3 mb-3">Desarrollador de Software</h2>
                     
                     <div class="typing-container mb-4">
                         <span class="typing-text"></span>
                     </div>
                     
-                    <p class="lead mb-5">Desarrollo aplicaciones web intuitivas, combinando diseño atractivo con código eficiente y funcional</p>
-                    <a href="#proyectos" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Ver mis proyectos</a>
+                    <p class="lead mb-5">Desarrollador de Software especializado en crear soluciones tecnológicas 
+                        innovadoras. Mi enfoque combina diseño intuitivo con código robusto y eficiente para ofrecer 
+                        experiencias digitales excepcionales.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#proyectos" class="btn btn-light btn-lg px-5 py-3 rounded-pill">Ver mis proyectos</a>
+                        <a href="#contacto" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill">Contactar</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -465,25 +78,58 @@
             <h2 class="section-title text-center">Sobre Mí</h2>
             <div class="row align-items-center">
                 <div class="col-12">
-                    <h3 class="mb-4">Desarrollador Full Stack con pasión por crear experiencias digitales excepcionales</h3>
-                    <p class="lead">Desarrollador Full Stack con <span id="yearsExperience"></span> años de experiencia, especializado en el desarrollo de aplicaciones web modernas y soluciones tecnológicas innovadoras. Mi formación académica en desarrollo de software, combinada con experiencia práctica en proyectos reales, me permite abordar desafíos técnicos complejos con una perspectiva integral.</p>
-                    <p>Me destaco por mi capacidad para liderar proyectos desde su concepción hasta su implementación, con un fuerte énfasis en la arquitectura de software y las mejores prácticas de desarrollo. Mi experiencia incluye el desarrollo de sistemas de gestión académica y administrativa, donde he demostrado habilidades tanto en el frontend como en el backend.</p>
-                    <br>
+                    <h3 class="mb-4">Desarrollador de Software enfocado en soluciones innovadoras</h3>
+                    <p class="lead">
+                        Con <span id="yearsExperience"></span> años de experiencia en el desarrollo de software, 
+                        me especializo en crear aplicaciones web que combinan funcionalidad con experiencias de usuario. 
+                        Mi formación académica en desarrollo de software y mi experiencia práctica me permiten abordar 
+                        proyectos complejos con una visión integral y orientada a resultados.</p>
+
+                    <p class="lead">Mi trayectoria incluye el desarrollo de sistemas de gestión académica, aplicaciones médicas 
+                        especializadas y soluciones empresariales. Me destaco por mi capacidad para transformar requisitos 
+                        complejos en soluciones técnicas efectivas, manteniendo siempre un equilibrio entre innovación y 
+                        usabilidad.
+                    </p>
                     <div class="row mt-4">
                         <div class="col-md-6">
-                            <h4 class="h5">Educación </h4>
+                            <h4 class="h5">Formación Académica</h4>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-graduation-cap me-2"></i> Tecnicatura en desarrollo de software [2022-2025]</li>
+                                <li class="mb-3">
+                                    <i class="fas fa-graduation-cap me-2"></i>
+                                    <strong>Tecnicatura en Desarrollo de Software</strong>
+                                    <div class="text-muted ms-4">2022 - 2025</div>
+                                </li>
                                 
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <h4 class="h5">Habilidades Destacadas</h4>
+                            <h4 class="h5">Competencias Clave</h4>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-language me-2"></i> Inglés (Intermedio - Avanzado)</li>
-                                <li class="mb-2"><i class="fas fa-project-diagram me-2"></i> Gestión de Proyectos</li>
-                                <li class="mb-2"><i class="fas fa-users me-2"></i> Liderazgo y Trabajo en Equipo</li>
-                                <li class="mb-2"><i class="fas fa-comments me-2"></i> Comunicación Efectiva</li>
+                                <li class="mb-3">
+                                    <i class="fas fa-code me-2"></i>
+                                    <strong>Desarrollo Full Stack</strong>
+                                    <div class="text-muted ms-4">Frontend y Backend</div>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-language me-2"></i>
+                                    <strong>Idiomas</strong>
+                                    <div class="text-muted ms-4">
+                                        • Inglés (Intermedio-Avanzado)<br>
+                                        • Español (Nativo)
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-tools me-2"></i>
+                                    <strong>Habilidades Profesionales</strong>
+                                    <div class="text-muted ms-4">
+                                        • Gestión de Proyectos<br>
+                                        • Trabajo en Equipo<br>
+                                        • Diseño pensado en el usuario<br>  
+                                        • Comunicación efectiva<br>
+                                        • Autodidacta<br>
+                                        • Creatividad<br>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -501,14 +147,17 @@
                     <h3 class="mb-3">¿Quieres conocer más sobre mi experiencia y formación?</h3>
                     <p class="lead mb-4">Accede a mis perfiles profesionales y currículum para ver todos los detalles de mi trayectoria.</p>
                     <div class="d-flex justify-content-center flex-wrap gap-4">
-                        <a href="https://github.com/maintres" class="btn btn-outline-light border-2 px-4 py-2 shadow-sm" target="_blank" style="transition: all 0.3s ease;">
+                        <a href="https://github.com/maintres" class="btn btn-outline-primary border-2 px-4 py-2 shadow-sm" target="_blank" style="transition: all 0.3s ease;">
                             <i class="fab fa-github me-2"></i>GitHub
                         </a>
-                        <a href="https://docs.google.com/document/d/1pvKFoOaEs-O5Ry_RbkmQ2uZZEoowyqQRXTZqMSINrMY/edit?usp=sharing" class="btn btn-outline-light border-2 px-4 py-2 shadow-sm" target="_blank" style="transition: all 0.3s ease;">
+                        <a href="./cv/index.html" class="btn btn-outline-primary border-2 px-4 py-2 shadow-sm" target="_blank" style="transition: all 0.3s ease;">
                             <i class="fas fa-file-alt me-2"></i>Ver CV
                         </a>
-                        <a href="https://linkedin.com/in/maxiolmosbazan/" class="btn btn-outline-light border-2 px-4 py-2 shadow-sm" target="_blank" style="transition: all 0.3s ease;">
+                        <a href="https://linkedin.com/in/maxiolmosbazan/" class="btn btn-outline-primary border-2 px-4 py-2 shadow-sm" target="_blank" style="transition: all 0.3s ease;">
                             <i class="fab fa-linkedin me-2"></i>LinkedIn
+                        </a>
+                        <a href="https://docs.google.com/document/d/1pvKFoOaEs-O5Ry_RbkmQ2uZZEoowyqQRXTZqMSINrMY/edit?usp=sharing" class="btn btn-outline-primary border-2 px-4 py-2 shadow-sm" target="_blank" style="transition: all 0.3s ease;">
+                            <i class="fas fa-file-alt me-2"></i>Ver CV en otro formato
                         </a>
                     </div>
                 </div>
@@ -525,10 +174,15 @@
                 <div class="col-lg-6 mb-4 fade-in">
                     <div class="card shadow h-100">
                         <div class="card-body">
-                            <h3 class="h4 mb-3">Pasantía en Instituto Superior de Vida Silvestre</h3>
-                            <p class="card-text">Desarrollé una aplicación completa para la gestión académica de un instituto privado, incluyendo módulos de inscripción, notas y correlatividades.</p>
-                            <p class="card-text">Lideré todo el proyecto y realicé el diseño de la experiencia e interfaz de usuario (UX/UI), y colaboré activamente tanto en el frontend como en el backend del sistema.</p>
-                            <p><strong>Tecnologías utilizadas:</strong> PHP, JavaScript, Bootstrap, SQL.</p>
+                            <h3 class="h4 mb-3">Sistema de Gestión Académica - Instituto Superior de Vida Silvestre</h3>
+                            <p>(Pasantía Abril 2024 - Septiembre 2024)</p>
+                            <p class="card-text">Diseñé e implementé una solución integral para la gestión académica que optimizó los procesos administrativos del instituto.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Arquitectura completa del sistema incluyendo módulos de inscripción, gestión de notas y correlatividades</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Diseño e implementación de interfaz intuitiva siguiendo principios UX/UI</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Desarrollo full stack con énfasis en seguridad y rendimiento</li>
+                            </ul>
+                            <p><strong>Tecnologías principales:</strong> PHP, JavaScript, Bootstrap, SQL</p>
                         </div>
                     </div>
                 </div>
@@ -537,11 +191,15 @@
                 <div class="col-lg-6 mb-4 fade-in">
                     <div class="card shadow h-100">
                         <div class="card-body">
-                            <h3 class="h4 mb-3">Pasantía en Servicio Penitenciario San Juan</h3>
-                            <p class="card-text">Colaboré en la creación de un sistema para el registro de ingreso de la persona privada de la libertad (ppl) en una institución penitenciaria.</p>
-                            <p class="card-text">Lideré todo el proyecto y diseñé la experiencia e interfaz de usuario (UX/UI), colaboré activamente tanto en el frontend como en el backend del sistema.</p>
-                            <p class="card-text">Desarrollé la gestión de roles y usuarios, establecí los permisos de cada usuario, construí la herramienta para las marcas y cicatrices del ppl.</p>
-                            <p><strong>Tecnologías utilizadas:</strong> PHP, JavaScript, Bootstrap, SQL.</p>
+                            <h3 class="h4 mb-3">Sistema de Gestión Penitenciaria - Servicio Penitenciario San Juan</h3>
+                            <p>(Pasantía Septiembre 2024 - Marzo 2025)</p>
+                            <p class="card-text">Desarrollé un sistema integral para la gestión y registro de personas privadas de la libertad (PPL), mejorando significativamente los procesos administrativos de la institución para el ingreso de las personas.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Implementación de sistema de autenticación y autorización con múltiples niveles de acceso</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Desarrollo de herramienta especializada para el registro y seguimiento de características físicas</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Diseño de interfaz intuitiva adaptada a las necesidades específicas del personal penitenciario</li>
+                            </ul>
+                            <p><strong>Tecnologías principales:</strong> PHP, JavaScript, Bootstrap, SQL</p>
                         </div>
                     </div>
                 </div>
@@ -549,11 +207,14 @@
                 <div class="col-lg-6 mb-4 fade-in">
                     <div class="card shadow h-100">
                         <div class="card-body">
-                            <h3 class="h4 mb-3">Trabajo Freelance en Sistemas Médicos</h3>
-                            <p class="card-text">Desarrollé sistemas especializados para profesionales de la salud, incluyendo un odontograma digital y un sistema de audiometría.</p>
-                            <p class="card-text">Diseñé e implementé interfaces intuitivas para la visualización de datos médicos complejos, facilitando el diagnóstico y seguimiento de pacientes.</p>
-                            <p class="card-text">Implementé funcionalidades para el registro detallado de procedimientos dentales y pruebas auditivas, generación de informes y seguimiento de historiales clínicos.</p>
-                            <p><strong>Tecnologías utilizadas:</strong> HTML, JavaScript, Bootstrap, Chart.js.</p>
+                            <h3 class="h4 mb-3">Desarrollo de Sistemas Médicos Especializados</h3>
+                            <p class="card-text">Creación de soluciones digitales innovadoras para profesionales de la salud, enfocadas en mejorar la eficiencia y precisión en el diagnóstico y seguimiento de pacientes.</p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Desarrollo de odontograma digital interactivo con visualización detallada del estado dental</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Implementación de sistema de audiometría con generación automática de audiogramas</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Diseño de interfaces médicas donde se registran marcas temporales de los pacientes</li>
+                            </ul>
+                            <p><strong>Tecnologías principales:</strong> JavaScript, HTML5, Bootstrap, Chart.js, Figma, SVG</p>
                         </div>
                     </div>
                 </div>
@@ -585,25 +246,25 @@
                             <!-- Slides -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="img/vida/1.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 1">
+                                    <img src="./Proyectos/vida/1.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 1">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/vida/2.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 2">
+                                    <img src="./Proyectos/vida/2.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 2">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/vida/3.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 3">
+                                    <img src="./Proyectos/vida/3.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 3">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/vida/4.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 4">
+                                    <img src="./Proyectos/vida/4.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 4">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/vida/5.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 5">
+                                    <img src="./Proyectos/vida/5.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 5">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/vida/6.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 6">
+                                    <img src="./Proyectos/vida/6.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 6">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/vida/7.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 7">
+                                    <img src="./Proyectos/vida/7.png" class="d-block w-100 card-img-top" alt="Vida Silvestre 7">
                                 </div>
                             </div>
                             
@@ -619,14 +280,20 @@
                         </div>
                         
                         <div class="card-body">
-                            <h5 class="card-title">Sistema de Gestión Académica</h5>
-                            <p class="card-text">Aplicación completa para la gestión académica de un instituto privado, con módulos de inscripción, notas y correlatividades.</p>
-                            <p><strong>Tecnologías:</strong> PHP, JavaScript, Bootstrap, SQL</p>
+                            <h5 class="card-title">Sistema de Gestión Académica Integral</h5>
+                            <p class="card-text">Plataforma web completa que revoluciona la gestión académica del Instituto Superior de Vida Silvestre. Optimiza procesos administrativos, mejora la experiencia de estudiantes y facilita el trabajo del personal docente.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">PHP</span>
+                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary me-2 mb-2">Bootstrap</span>
+                                <span class="badge bg-primary me-2 mb-2">SQL</span>
+                            </div>
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
                                 <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
-                                <a href="vida-detalles.html" class="btn btn-primary btn-sm"><i class="fas fa-info-circle me-1"></i> Detalles</a>
+                                <a href="./Proyectos/vida/detalles.html" class="btn btn-primary btn-sm"><i class="fas fa-info-circle me-1"></i> Detalles</a>
+                                <a href="https://github.com/maintres/SPP.git" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Código</a>
                             </div>
                         </div>
                     </div>
@@ -658,46 +325,43 @@
                             <!-- Slides -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="img/spp/1.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 1">
+                                    <img src="./Proyectos/spp/1.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 1">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/2.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 2">
+                                    <img src="./Proyectos/spp/2.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 2">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/3.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 3">
+                                    <img src="./Proyectos/spp/3.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 3">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/4.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 4">
+                                    <img src="./Proyectos/spp/4.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 4">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/5.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 5">
+                                    <img src="./Proyectos/spp/5.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 5">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/6.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 6">
+                                    <img src="./Proyectos/spp/6.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 6">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/7.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 7">
+                                    <img src="./Proyectos/spp/8.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 8">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/8.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 8">
+                                    <img src="./Proyectos/spp/9.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 9">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/9.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 9">
+                                    <img src="./Proyectos/spp/10.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 10">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/10.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 10">
+                                    <img src="./Proyectos/spp/11.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 11">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/11.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 11">
+                                    <img src="./Proyectos/spp/12.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 12">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/12.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 12">
+                                    <img src="./Proyectos/spp/13.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 13">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/spp/13.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 13">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="img/spp/14.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 14">
+                                    <img src="./Proyectos/spp/14.png" class="d-block w-100 card-img-top" alt="Sistema Penitenciario 14">
                                 </div>
                             </div>
                             
@@ -713,14 +377,20 @@
                         </div>
                         
                         <div class="card-body">
-                            <h5 class="card-title">Sistema de Registro Penitenciario</h5>
-                            <p class="card-text">Sistema para el registro de ingreso de personas privadas de la libertad con gestión de roles, permisos y registro de marcas corporales.</p>
-                            <p><strong>Tecnologías:</strong> PHP, JavaScript, Bootstrap, SQL</p>
+                            <h5 class="card-title">Sistema Integral de Gestión Penitenciaria</h5>
+                            <p class="card-text">Solución tecnológica innovadora que moderniza el proceso de registro y seguimiento de personas privadas de la libertad. Implementa controles de seguridad avanzados y optimiza la gestión administrativa.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">PHP</span>
+                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary me-2 mb-2">Bootstrap</span>
+                                <span class="badge bg-primary me-2 mb-2">SQL</span>
+                            </div>
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
                                 <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
-                                <a href="spp-detalles.html" class="btn btn-primary btn-sm"><i class="fas fa-info-circle me-1"></i> Detalles</a>
+                                <a href="./Proyectos/spp/detalles.html" class="btn btn-primary btn-sm"><i class="fas fa-info-circle me-1"></i> Detalles</a>
+                                <a href="https://github.com/maintres/SPP.git" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Código</a>
                             </div>
                         </div>
                     </div>
@@ -731,12 +401,17 @@
                     <div class="card project-card shadow h-100">
                         <!-- Carrusel de imágenes -->
                         <div id="carouselOdontograma" class="carousel slide" data-bs-ride="carousel">
+                            <!-- Indicadores -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselOdontograma" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselOdontograma" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="img/odontograma/1.png" class="d-block w-100 card-img-top" alt="Odontograma Digital 1">
+                                    <img src="./Proyectos/odontograma/1.png" class="d-block w-100 card-img-top" alt="Odontograma Digital 1">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/odontograma/2.jpg" class="d-block w-100 card-img-top" alt="Odontograma Digital 2">
+                                    <img src="./Proyectos/odontograma/2.jpg" class="d-block w-100 card-img-top" alt="Odontograma Digital 2">
                                 </div>
                             </div>
                             
@@ -752,14 +427,19 @@
                         </div>
                         
                         <div class="card-body">
-                            <h5 class="card-title">Odontograma Digital</h5>
-                            <p class="card-text">Aplicación web para odontólogos que permite registrar y visualizar el estado dental de los pacientes de forma interactiva y detallada.</p>
-                            <p><strong>Tecnologías:</strong> JavaScript, HTML5 Canvas</p>
+                            <h5 class="card-title">Odontograma Digital Interactivo</h5>
+                            <p class="card-text">Herramienta profesional que transforma la gestión dental digital. Permite a los odontólogos documentar y visualizar el estado bucal de los pacientes con precisión milimétrica, mejorando la calidad del diagnóstico y seguimiento.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary me-2 mb-2">HTML5</span>
+                                <span class="badge bg-primary me-2 mb-2">Figma</span>
+                                <span class="badge bg-primary me-2 mb-2">Bootstrap</span>
+                            </div>
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
                                 <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
-                                <a href="img/odontograma/index.html" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                <a href="./Proyectos/odontograma/index.html" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
                             </div>
                         </div>
                     </div>
@@ -772,11 +452,15 @@
                             <!-- Indicadores -->
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselAudiograma" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselAudiograma" data-bs-slide-to="1" aria-label="Slide 2"></button>
                             </div>
                             <!-- Imágenes -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="img/audiograma/1.png" class="d-block w-100" alt="Audiograma Vista 1">
+                                    <img src="./Proyectos/audiograma/1.png" class="d-block w-100" alt="Audiograma Vista 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./Proyectos/audiograma/2.png" class="d-block w-100" alt="Audiograma Vista 1">
                                 </div>
                             </div>
                             <!-- Controles -->
@@ -791,14 +475,69 @@
                         </div>
                         
                         <div class="card-body">
-                            <h5 class="card-title">Sistema de Audiometría</h5>
-                            <p class="card-text">Aplicación web para la gestión y registro de audiometrías, permitiendo la creación y visualización de audiogramas de manera interactiva.</p>
-                            <p><strong>Tecnologías:</strong> JavaScript, Bootstrap, SVG, Chart.js</p>
+                            <h5 class="card-title">Sistema Avanzado de Audiometría Digital</h5>
+                            <p class="card-text">Plataforma especializada que revoluciona la evaluación auditiva. Genera audiogramas interactivos de alta precisión y facilita el seguimiento detallado de la salud auditiva de los pacientes.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary me-2 mb-2">Bootstrap</span>
+                                <span class="badge bg-primary me-2 mb-2">SVG</span>
+                                <span class="badge bg-primary me-2 mb-2">Chart.js</span>
+                            </div>
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
                                 <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
-                                <a href="img/audiograma/index.html" class="btn btn-primary btn-sm mt-0 pt-0"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                <a href="./Proyectos/audiograma/index.html" class="btn btn-primary btn-sm mt-0 pt-0"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Partes del cuerpo -->
+                <div class="col-md-6 col-lg-4 fade-in mt-4">
+                    <div class="card project-card shadow h-100">
+                        <!-- Carrusel de imágenes -->
+                        <div id="carouselPartesDelCuerpo" class="carousel slide" data-bs-ride="carousel">
+                            <!-- Indicadores -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselPartesDelCuerpo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselPartesDelCuerpo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            </div>
+                            <!-- Imágenes -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./Proyectos/partesCuerpo/1.png" class="d-block w-100" alt="Partes Del Cuerpo Vista 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./Proyectos/partesCuerpo/2.png" class="d-block w-100" alt="Partes Del Cuerpo Vista 1">
+                                </div>
+                            </div>
+                            <!-- Controles -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPartesDelCuerpo" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselPartesDelCuerpo" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Sistema Interactivo de Mapeo Corporal</h5>
+                            <p class="card-text">Innovadora herramienta de visualización anatómica que permite el registro preciso y detallado de marcas corporales. Integra una interfaz intuitiva con capacidades avanzadas de exportación de datos.</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                                <span class="badge bg-primary me-2 mb-2">Bootstrap</span>
+                                <span class="badge bg-primary me-2 mb-2">SVG</span>
+                                <span class="badge bg-primary me-2 mb-2">JSON</span>
+                                <span class="badge bg-primary me-2 mb-2">Figma</span>
+                                <span class="badge bg-primary me-2 mb-2">HTML5</span>
+                            </div>
+                        </div>
+                        <div class="card-footer border-0">
+                            <div class="d-flex justify-content-between">
+                                <!-- <a href="#" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a> -->
+                                <a href="./Proyectos/partesCuerpo/partes_cuerpo.html" class="btn btn-primary btn-sm mt-0 pt-0"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
                             </div>
                         </div>
                     </div>
@@ -816,7 +555,6 @@
                     <p class="lead mb-5">Estas son las tecnologías con las que trabajo habitualmente</p>
                 </div>
                 
-                <!-- Frontend -->
                 <div class="col-md-4 mb-5">
                     <h3 class="h4 mb-4">Frontend</h3>
                     <div class="d-flex flex-wrap justify-content-center">
@@ -835,6 +573,11 @@
                         <div class="tech-item">
                             <i class="fab fa-bootstrap tech-icon"></i>
                             <p>Bootstrap</p>
+                        </div>
+                        
+                        <div class="tech-item">
+                            <i class="fab fa-react tech-icon"></i>
+                            <p>React</p>
                         </div>
                     </div>
                 </div>
@@ -855,6 +598,19 @@
                             <i class="fas fa-server tech-icon"></i>
                             <p>SQL</p>
                         </div>
+                        
+                        <div class="tech-item">
+                            <i class="fab fa-python tech-icon"></i>
+                            <p>Python</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-java tech-icon"></i>
+                            <p>Java</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-code tech-icon"></i>
+                            <p>C++</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -873,6 +629,14 @@
                         <div class="tech-item">
                             <i class="fas fa-code-branch tech-icon"></i>
                             <p>Control de versiones</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-figma tech-icon"></i>
+                            <p>Figma</p>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-file-code tech-icon"></i>
+                            <p>JSON</p>
                         </div>
                     </div>
                 </div>
@@ -895,7 +659,7 @@
                                 <p><i class="fas fa-map-marker-alt"></i> San Juan, Argentina</p>
                                 <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/maxiolmosbazan/" target="_blank" class="text-decoration-none">linkedin.com/in/maxiolmosbazan/</a></p>
                                 <p><i class="fab fa-github"></i> <a href="https://github.com/maintres" target="_blank" class="text-decoration-none">github.com/maintres</a></p>
-                                <p><i class="fas fa-file-alt"></i> <a href="https://docs.google.com/document/d/1pvKFoOaEs-O5Ry_RbkmQ2uZZEoowyqQRXTZqMSINrMY/edit?usp=sharing" target="_blank" class="text-decoration-none">Ver mi CV completo</a></p>
+                                <p><i class="fas fa-file-alt"></i> <a href="./cv/index.html" target="_blank" class="text-decoration-none">Ver mi CV completo</a></p>
                             </div>
                         </div>
                     </div>

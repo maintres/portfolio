@@ -1,0 +1,58 @@
+ejemplo cv
+Datos Personales
+
+Nombre: Valentina Pilar Werle
+
+Correo: valentinawerle@gmail.com
+
+Perfil
+
+Me considero una persona comprometida con el aprendizaje continuo, con excelentes habilidades de comunicación y trabajo en equipo, y una capacidad de aprendizaje rápido. Además, destaco por mi empatía, adaptabilidad y habilidad para resolver problemas, lo que me permite interactuar eficazmente en diversos entornos y situaciones.
+
+Formación
+
+Universidad de Belgrano
+
+Carrera: Ingeniería en Informática (en curso).
+
+Colegio Manuel Belgrano
+
+2017 – 2021
+
+Bachiller en Matemática y Física.
+
+Experiencia
+
+Pasantía en Lepton Sistemas
+
+Desarrollo de software en aplicaciones orientadas a la carpintería.
+
+Desarrollo web para el sistema de la empresa.
+
+Enero 2024 – Actualidad
+
+Lenguajes
+
+Inglés: Nivel avanzado (B2 – First Certificate).
+
+Portugués: Nivel básico.
+
+Español: Nativo.
+
+Aptitudes
+
+Experiencia con bases de datos.
+
+Conocimientos de:
+
+Java
+
+Python
+
+TypeScript
+
+JavaScript
+
+HTML
+
+CSS
