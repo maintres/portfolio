@@ -1,0 +1,19 @@
+p{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+.button-operar{
+    font-size: 14px;
+    padding: 5px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3a3a5a;
+    border: none;    
+    cursor: pointer;    
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    &:hover{
+        background-color: #333;
+    }
+}
