@@ -546,9 +546,37 @@
                 <!-- Proyecto: E-Commerce React con Firebase -->
                 <div class="col-md-6 col-lg-4 fade-in mt-4">
                     <div class="card project-card shadow h-100">
-                        <!-- Imagen del proyecto -->
-                        <div class="project-image-container">
-                            <img src="./Proyectos/07-api-firebase/img/logo.png" class="card-img-top project-image" alt="E-Commerce React Firebase">
+                        <!-- Carrusel de imágenes -->
+                        <div id="carouselFirebase" class="carousel slide" data-bs-ride="carousel">
+                            <!-- Indicadores -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselFirebase" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselFirebase" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselFirebase" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            
+                            <!-- Slides -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./Proyectos/07-api-firebase/img/1.png" class="d-block w-100 card-img-top" alt="E-Commerce React Firebase 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./Proyectos/07-api-firebase/img/2.png" class="d-block w-100 card-img-top" alt="E-Commerce React Firebase 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./Proyectos/07-api-firebase/img/3.png" class="d-block w-100 card-img-top" alt="E-Commerce React Firebase 3">
+                                </div>
+                            </div>
+                            
+                            <!-- Controles -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselFirebase" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselFirebase" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
                         </div>
                         
                         <div class="card-body">
@@ -565,7 +593,7 @@
                         </div>
                         <div class="card-footer border-0">
                             <div class="d-flex justify-content-between">
-                                <a href="./Proyectos/07-api-firebase/index.html" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
+                                <a href="https://superlative-sunflower-6ce416.netlify.app/" class="btn btn-primary btn-sm"><i class="fas fa-external-link-alt me-1"></i> Demo</a>
                                 <a href="https://github.com/maintres/07-api-firebase" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> Código</a>
                             </div>
                         </div>
